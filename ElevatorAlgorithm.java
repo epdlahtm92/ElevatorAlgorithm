@@ -13,14 +13,8 @@ public class ElevatorAlgorithm {
 		int currentFloor = sc.nextInt();
 		boolean direction = sc.nextBoolean(); // true = up, false = down
 
-		int distance1 = elev1 - currentFloor;
-		if (distance1 < 0) {
-			distance1 = distance1 * (-1);
-		} 
-		int distance2 = elev2 - currentFloor;
-		if (distance2 < 0) {
-			distance2 = distance2 * (-1);
-		}
+		int distance1 = DistanceCalculator(elev1, currentFloor);
+		int distance2 = DistanceCalculator(elev2, currentFloor);	
 
 		if (direction = true) {
 			if (distance1 > distance2) {
@@ -35,6 +29,12 @@ public class ElevatorAlgorithm {
 				System.out.println("call Elevator2");
 			} 
 		}
-
+	}
+	public static int DistanceCalculator(int elevator, int floor) {
+		int distance = elevator - floor;
+		if ((elevator - floor) < 0) {
+			distance = (elevator - floor) * (-1);
+		}
+		return distance;
 	}
 }
