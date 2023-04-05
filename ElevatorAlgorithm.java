@@ -16,6 +16,19 @@ public class ElevatorAlgorithm {
 		int distance1 = DistanceCalculator(elev1, currentFloor);
 		int distance2 = DistanceCalculator(elev2, currentFloor);	
 
+		ScreenOutput(direction, distance1, distance2);
+	}
+	
+	public static int DistanceCalculator(int elevator, int floor) {
+		int distance = elevator - floor;
+		if ((elevator - floor) < 0) {
+			distance = (elevator - floor) * (-1);
+		}
+		return distance;
+	}
+	
+	public static void ScreenOutput(boolean direction, int distance1, int distance2) {
+		
 		if (direction = true) {
 			if (distance1 > distance2) {
 				System.out.println("call Elevator1");
@@ -29,12 +42,5 @@ public class ElevatorAlgorithm {
 				System.out.println("call Elevator2");
 			} 
 		}
-	}
-	public static int DistanceCalculator(int elevator, int floor) {
-		int distance = elevator - floor;
-		if ((elevator - floor) < 0) {
-			distance = (elevator - floor) * (-1);
-		}
-		return distance;
 	}
 }
